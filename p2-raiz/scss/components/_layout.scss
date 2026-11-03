@@ -11,9 +11,31 @@
 
 .pagina {
   min-height: 100dvh;
+  display: grid;
+  grid-template-areas: 
+    "cabecera"
+    "heroe"
+    "principal"
+    "consejos"
+    "pie";
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: 1fr 20rem;
+    grid-template-areas: 
+      "cabecera cabecera"
+      "heroe heroe"
+      "principal consejos"
+      "pie pie";
+  }
+
+  @media (min-width: $bp-lg){
+    max-width: 100rem;
+    margin-inline: auto;
+  }
 }
 
 .principal {
+  grid-area: principal;
   padding: clamp(1rem, 0.5rem + 2vw, 2.5rem); // 👀 A4 · relleno fluido (ya resuelto)
 }
 
@@ -21,12 +43,22 @@
   margin-top: 0;
 }
 
+.cabecera {
+  grid-area: cabecera;
+}
+
+.heroe {
+  grid-area: heroe;
+}
+
 .consejos {
+  grid-area: consejos;
   padding: clamp(1rem, 0.5rem + 2vw, 2.5rem); // 👀 A4 · relleno fluido (ya resuelto)
   background: var(--color-superficie);
 }
 
 .pie {
+  grid-area: pie;
   padding: $space-md;
   text-align: center;
   color: var(--color-sobre-marca);
