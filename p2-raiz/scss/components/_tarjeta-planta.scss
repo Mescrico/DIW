@@ -7,8 +7,8 @@
 @use "../tokens" as *;
 
 .tarjeta-planta {
-  background-color: $dark-surface;
-  color: $dark-text;
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
   border-radius: $radius-md;
   padding: $space-md;
   display: flex;
@@ -27,14 +27,14 @@
   &__titulo {
     font-size: 1.2rem;
     font-weight: 700;
-    color: $dark-text;
+    color: var(--color-texto);
     margin: 0;
     letter-spacing: -0.01em;
   }
 
   &__descripcion {
     font-size: 0.9rem;
-    color: $dark-text;
+    color: var(--color-texto);
     opacity: 0.75;
     margin: 0;
     flex-grow: 1;
@@ -44,7 +44,7 @@
   &__precio {
     font-size: 1.2rem;
     font-weight: 800;
-    color: $dark-brand-primary;
+    color: var(--color-marca);
     margin: $space-xs 0 0 0;
   }
 
@@ -55,8 +55,8 @@
 
   &__etiqueta {
     display: inline-block;
-    background-color: $dark-accent;
-    color: $dark-on-brand;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.05em;
@@ -77,5 +77,5 @@
 }
 
 .tarjeta-planta--oferta {
-  border-left: 3px solid $dark-accent;
+  border-left: 3px solid var(--color-acento);
 }
